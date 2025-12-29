@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignProjectScope } from "@/components/DesignProjectScope";
+
 const included = [
-  "Зонирование SPA: бассейн, хаммам, сауна, душевые, раздевалки",
-  "Визуализации и ведомости отделки, мебели, света и оборудования",
-  "Инженерные узлы: вентиляция, отопление, водоподготовка, гидроизоляция",
-  "Чертежи, спецификации и сметы для подрядчиков",
-  "Подбор материалов и снабжение, авторский надзор",
+  "Зонирование SPA: бассейн, хаммам, сауна, душевые, раздевалки и техзоны",
+  "Визуализации и ведомости отделки, мебели, света и профильного оборудования",
+  "Инженерные узлы: вентиляция, отопление, водоподготовка, гидроизоляция и шумка",
+  "Чертежи: технический план и 3D-модель в Revit, инженерные схемы и узлы для подрядчиков",
+  "Спецификация всех материалов, светотехники, мебели и оборудования по проекту",
+  "3D Max визуализации всех зон SPA/бассейна для согласования",
+  "Подбор материалов и оборудования, снабжение и авторский надзор",
 ];
 
 const risks = [
@@ -14,6 +18,13 @@ const risks = [
   "Срыв сроков и бюджета: отсутствуют узлы и спецификации оборудования",
   "Неправильная вентиляция и водоподготовка — риск конденсата и поломок",
   "Штрафы и простои из-за несоблюдения норм безопасности",
+];
+
+const caseImages = [
+  { src: "/Image/image copy 14.png", alt: "Кейс SPA 1" },
+  { src: "/Image/image copy 22.png", alt: "Кейс SPA 2" },
+  { src: "/Image/image copy 17.png", alt: "Кейс SPA 3" },
+  { src: "/Image/image copy 10.png", alt: "Кейс SPA 4" },
 ];
 
 export default function DesignSpaPage() {
@@ -81,6 +92,32 @@ export default function DesignSpaPage() {
           </div>
         </div>
       </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-8 md:pb-12">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Кейсы</h2>
+            <Link href="/cases#design-spa" className="text-sm text-[var(--orange)] hover:underline">
+              Все кейсы
+            </Link>
+          </div>
+          <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2">
+            {caseImages.map((item) => (
+              <div
+                key={item.src}
+                className="relative h-40 w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[var(--surface)] md:h-48 md:w-80"
+              >
+                <Image src={item.src} alt={item.alt} fill className="object-cover" sizes="320px" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-sm text-white/90">
+                  {item.alt}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <DesignProjectScope />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">

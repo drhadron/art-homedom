@@ -18,7 +18,7 @@ const cases = [
 const services = [
   {
     title: "Дизайн проект",
-    href: "/services/design-house",
+    href: "/services/design/doma",
     image: "/Image/image copy 11.png",
     tagline: "Дизайн проект дома в 100% случаев окупает себя на этапе стройки.",
     price: "От 3 500 за м²",
@@ -39,7 +39,7 @@ const services = [
   },
   {
     title: "Архитектурный проект",
-    href: "/services",
+    href: "/services/architecture",
     image: "/Image/image copy 15.png",
     tagline:
       "Архитектурный проект — самый важный этап, который либо радует, либо нет, взгляд на протяжении всей жизни.",
@@ -95,7 +95,7 @@ export function ServicesSection() {
                     </div>
                     <Link
                       href={service.href}
-                      className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                      className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                     >
                       Подробнее
                       <svg

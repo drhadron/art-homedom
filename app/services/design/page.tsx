@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignIblEffect } from "@/components/DesignIblEffect";
+import { DesignProjectScope } from "@/components/DesignProjectScope";
+
 const designCards = [
   {
     title: "Дизайн проект квартиры",
@@ -24,14 +27,6 @@ const designCards = [
     image: "/Image/image copy 2.png",
     href: "/services/design/commerce",
     caseHref: "/cases#design-commerce",
-    price: "От 3 500 за м²",
-  },
-  {
-    title: "Дизайн экстерьера",
-    desc: "Фасады, входные группы и навигация, которые работают на бренд и эксплуатацию.",
-    image: "/Image/image copy 16.png",
-    href: "/services/design/exteriyer",
-    caseHref: "/cases#design-exteriyer",
     price: "От 3 500 за м²",
   },
   {
@@ -62,15 +57,8 @@ export default function DesignServicesPage() {
                   Дизайн-проекты, которые выдерживают стройку
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 10.png"
-                      alt="Дизайн-проект"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                  <div className="relative aspect-[4/3] w-full bg-black">
+                    <DesignIblEffect />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -94,15 +82,8 @@ export default function DesignServicesPage() {
               </div>
             </div>
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 10.png"
-                  alt="Дизайн-проект"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+              <div className="relative aspect-[4/3] w-full bg-black">
+                <DesignIblEffect />
               </div>
             </div>
           </div>
@@ -139,7 +120,7 @@ export default function DesignServicesPage() {
                   </div>
                   <Link
                     href={card.href || "/contacts"}
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg
@@ -156,7 +137,7 @@ export default function DesignServicesPage() {
                   </Link>
                   <Link
                     href={card.caseHref || "/cases"}
-                    className="inline-flex items-center gap-2 text-sm text-white/80 underline-offset-4 transition hover:text-[var(--orange)]"
+                    className="inline-flex items-center gap-2 text-sm text-white/80 underline-offset-4 transition hover:text-[var(--green)]"
                   >
                     Кейсы
                     <svg
@@ -178,6 +159,8 @@ export default function DesignServicesPage() {
           </div>
         </div>
       </section>
+
+      <DesignProjectScope />
     </div>
   );
 }

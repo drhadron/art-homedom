@@ -16,7 +16,8 @@ const navItems: NavItem[] = [
     name: "Услуги",
     href: "/services",
     submenu: [
-      { name: "Дизайн проект", href: "/services/design" },
+      { name: "Дизайн-проект интерьера", href: "/services/design" },
+      { name: "Дизайн-проект экстерьера", href: "/services/design/exteriyer" },
       { name: "Архитектурный проект", href: "/services/architecture" },
       { name: "Ландшафтный проект", href: "/services/landscape" },
       { name: "Чертежи", href: "/services/plan" },
@@ -31,6 +32,8 @@ const navItems: NavItem[] = [
       { name: "Частные дома", href: "/doma" },
       { name: "Квартиры", href: "/kvartiry" },
       { name: "Ландшафтный дизайн", href: "/landshaft" },
+      { name: "Двор МКД", href: "/services/landscape/mnogokvartir" },
+      { name: "Парки и водоёмы", href: "/services/landscape/park" },
     ],
   },
   { name: "Блог", href: "/blog" },
@@ -64,21 +67,21 @@ export function Header() {
               <div key={item.name} className="group relative">
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-1 py-2 transition-colors ${
-                    isActive
-                      ? "text-[var(--orange)]"
-                      : "text-white hover:text-[var(--orange)]"
-                  }`}
-                >
-                  {item.name}
-                  {item.submenu && (
-                    <svg
-                      className="h-4 w-4 text-white/70 group-hover:text-[var(--orange)]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
+              className={`flex items-center gap-1 py-2 transition-colors ${
+                isActive
+                  ? "text-[var(--orange)]"
+                  : "text-white hover:text-[var(--orange)]"
+              }`}
+            >
+              {item.name}
+              {item.submenu && (
+                <svg
+                  className="h-4 w-4 text-white/70 group-hover:text-[var(--orange)]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                       strokeLinejoin="round"
                     >
                       <path d="m6 9 6 6 6-6" />
@@ -86,7 +89,8 @@ export function Header() {
                   )}
                 </Link>
                 {item.submenu && (
-                  <div className="invisible absolute left-0 top-full mt-1 w-52 translate-y-0 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100">
+                  <div className="invisible absolute left-0 top-[calc(100%-2px)] z-20 w-52 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100">
+                    <div className="absolute -top-2 left-0 h-2 w-full" aria-hidden />
                     <div className="overflow-hidden rounded-xl border border-white/10 bg-[var(--surface)] shadow-[0_20px_60px_-40px_rgba(0,0,0,0.8)]">
                       {item.submenu.map((sub) => (
                         <Link
@@ -111,7 +115,7 @@ export function Header() {
               href="https://wa.me/79386903838"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/10 bg-white/5 p-2 text-[var(--green)] transition hover:border-white/30 hover:bg-white/10"
+              className="rounded-full border border-[var(--green)] bg-[var(--green)]/10 p-2 text-[var(--green)] transition hover:border-[var(--green)]/80 hover:bg-[var(--green)]/15"
               aria-label="Написать в WhatsApp"
             >
               <svg
@@ -170,7 +174,7 @@ export function Header() {
             href="https://wa.me/79386903838"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-white/10 bg-white/5 p-2 text-[var(--green)] transition hover:border-white/30 hover:bg-white/10"
+            className="rounded-full border border-[var(--green)] bg-[var(--green)]/10 p-2 text-[var(--green)] transition hover:border-[var(--green)]/80 hover:bg-[var(--green)]/15"
             aria-label="Написать в WhatsApp"
           >
             <svg
@@ -296,7 +300,7 @@ export function Header() {
                       href="https://wa.me/79386903838"
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-full border border-white/10 bg-white/5 p-2 text-[var(--green)] transition hover:border-white/30 hover:bg-white/10"
+                      className="rounded-full border border-[var(--green)] bg-[var(--green)]/10 p-2 text-[var(--green)] transition hover:border-[var(--green)]/80 hover:bg-[var(--green)]/15"
                       aria-label="Написать в WhatsApp"
                     >
                       <svg

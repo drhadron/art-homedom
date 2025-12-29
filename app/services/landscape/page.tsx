@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { LandscapeInstancingEffect } from "@/components/LandscapeInstancingEffect";
+
 const landscapeCards = [
   {
     title: "Двор частного дома",
@@ -50,15 +52,8 @@ export default function LandscapeServicesPage() {
                   Ландшафт, который работает днём и ночью
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 19.png"
-                      alt="Ландшафтный проект"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                  <div className="relative aspect-[4/3] w-full bg-black">
+                    <LandscapeInstancingEffect />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -83,15 +78,8 @@ export default function LandscapeServicesPage() {
             </div>
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 19.png"
-                  alt="Ландшафтный проект"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+              <div className="relative aspect-[4/3] w-full bg-black">
+                <LandscapeInstancingEffect />
               </div>
             </div>
           </div>
@@ -128,7 +116,7 @@ export default function LandscapeServicesPage() {
                   </div>
                   <Link
                     href={card.href || "/contacts"}
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg

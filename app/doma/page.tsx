@@ -1,46 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
-import FurnitureSection from "@/components/FurnitureSection";
 
 const serviceCards = [
   {
     title: "Дизайн интерьера",
-    description: "Материалы, свет и мебель под реализацию без сюрпризов на стройке.",
+    description: "Планировки, отделка, мебель и свет с привязкой к инженерии дома и бюджету стройки.",
     image: "/Image/image copy 11.png",
     href: "/services/design/doma",
     price: "От 3 500 за м²",
   },
   {
     title: "Дизайн экстерьера",
-    description: "Фасады и входные группы, согласованные с конструктивом и нормами.",
+    description: "Фасады, входные группы и кровля с узлами и материалами, согласованными с конструктивом.",
     image: "/Image/image copy 16.png",
     href: "/services/design/exteriyer",
     price: "От 3 500 за м²",
   },
   {
     title: "Ландшафт двора",
-    description: "Дорожки, озеленение, свет и дренаж — под единый проект дома.",
+    description: "Маршруты, мощение, дренаж, свет и озеленение двора с увязкой с домом и рельефом.",
     image: "/Image/image copy 19.png",
     href: "/services/landscape/doma",
     price: "От 1 500 за м²",
   },
   {
     title: "СПА центр",
-    description: "Планировка, инженерия и отделка для СПА-зон и бассейнов.",
+    description: "Планировка, гидроизоляция, вентиляция и отделка для SPA/бассейнов в частном доме.",
     image: "/Image/image copy 14.png",
     href: "/services/design/spa",
     price: "От 3 500 за м²",
   },
   {
     title: "Чертежи",
-    description: "Рабочая документация: электрика, сантехника, узлы и спецификации.",
+    description: "Рабочая документация по дому: электрика, сантехника, конструктив, узлы и спецификации.",
     image: "/Image/image copy 13.png",
     href: "/services/plan/doma",
     price: "От 800 за м²",
   },
   {
     title: "Архитектурный проект",
-    description: "Планировки, фасады, конструктив и инженерия — без конфликтов на стройке.",
+    description: "Планировки, фасады, конструктив и посадка дома на участок с учётом инженерии и норм.",
     image: "/Image/image copy 15.png",
     href: "/services/architecture/doma",
     price: "От 1 500 за м²",
@@ -171,7 +170,7 @@ export default function DomaPage() {
                   </div>
                   <Link
                     href={service.href || "/contacts"}
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg
@@ -237,7 +236,6 @@ export default function DomaPage() {
           </div>
         </div>
       </section>
-      <FurnitureSection />
     </div>
   );
 }

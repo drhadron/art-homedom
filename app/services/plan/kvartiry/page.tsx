@@ -1,11 +1,39 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { PlanBvhEffect } from "@/components/PlanBvhEffect";
 
 const includes = [
   "Планировки, электрика, сантехника, узлы и раскладки",
   "Спецификации материалов, мебели и света",
   "Ведомости и сметы для закупок",
   "Узлы и детали для подрядчиков — без лишних вопросов",
+];
+
+const descriptionItems = [
+  "Обмерный план (фактические размеры помещения)",
+  "План демонтажа и монтажа перегородок (если предусмотрено)",
+  "Планировочное решение с расстановкой мебели и оборудования",
+  "План полов (покрытия, уровни, узлы)",
+  "План потолков (уровни, конструкции, узлы)",
+  "План размещения розеток, выключателей и выводов с привязками",
+  "Схема освещения (группы света, включение, сценарии)",
+  "План сантехнического оборудования и разводки (точки подключения)",
+  "План отопления/тёплых полов (при необходимости)",
+  "Развертки стен по помещениям (кухня, санузлы и т.д.)",
+  "Ведомости материалов и спецификации (по проекту)",
+];
+
+const seoKeywords = [
+  "чертежи квартиры",
+  "рабочие чертежи ремонта",
+  "план электрики квартиры",
+  "план сантехники квартиры",
+  "план потолков",
+  "план полов",
+  "развертки стен",
+  "ведомости материалов",
+  "рабочие планы и схемы",
+  "чертежи под ремонт",
 ];
 
 const risks = [
@@ -33,14 +61,8 @@ export default function PlanKvartiryPage() {
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 18.png"
-                      alt="Чертежи квартир"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                    <PlanBvhEffect />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -66,16 +88,43 @@ export default function PlanKvartiryPage() {
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 18.png"
-                  alt="Чертежи квартир"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+                <PlanBvhEffect />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-16">
+        <div className="mx-auto max-w-6xl space-y-6 px-4 md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Чертежи квартиры — что входит</h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Чертежи квартиры — это комплект рабочих планов и схем, по которым выполняют ремонт и монтаж.
+              Обычно в него входят:
+            </p>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {descriptionItems.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-2">
+            {seoKeywords.map((keyword) => (
+              <span
+                key={keyword}
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-white/75"
+              >
+                {keyword}
+              </span>
+            ))}
           </div>
         </div>
       </section>

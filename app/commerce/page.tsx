@@ -1,39 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
-import FurnitureSection from "@/components/FurnitureSection";
 
 const serviceCards = [
   {
     title: "Дизайн интерьера",
-    description: "Визуализации, ведомости отделки, мебель и свет под эксплуатацию.",
+    description: "Интерьер под бренд и нормы: поток клиентов, стойки, кассы, освещение и отделка под эксплуатацию.",
     image: "/Image/image copy 2.png",
     href: "/services/design/commerce",
     price: "От 3 500 за м²",
   },
   {
     title: "Дизайн экстерьера",
-    description: "Фасады, входные группы и навигация, которые работают на бренд.",
+    description: "Фасады, входные группы, витрины и вывески с узлами креплений и подсветкой под бренд.",
     image: "/Image/image copy 16.png",
     href: "/services/design/exteriyer",
     price: "От 3 500 за м²",
   },
   {
     title: "Ландшафтный дизайн",
-    description: "Территория, логистика потоков, озеленение и свет для коммерции.",
+    description: "Территория для клиентов: проезды, парковки, навигация, озеленение и свет без конфликтов потоков.",
     image: "/Image/image copy 19.png",
     href: "/services/landscape/commerce",
     price: "От 1 500 за м²",
   },
   {
     title: "Архитектурный проект",
-    description: "Планировка, нормы, конструктив и инженерия — без конфликтов на стройке.",
+    description: "Планировки и конструктив под нормы и бизнес-процессы, фасады, эвакуация и инженерия без штрафов.",
     image: "/Image/image copy 15.png",
     href: "/services/architecture/commerce",
     price: "От 1 500 за м²",
   },
   {
     title: "Чертежи",
-    description: "Рабочая документация и спецификации, чтобы подрядчики не задавали лишних вопросов.",
+    description: "Рабочие чертежи: электрика, ОВиК, узлы и спецификации для подрядчиков и согласований.",
     image: "/Image/image copy 13.png",
     href: "/services/plan/commerce",
     price: "От 800 за м²",
@@ -182,7 +181,7 @@ export default function CommercePage() {
                   </div>
                   <Link
                     href={service.href || "/contacts"}
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg
@@ -249,7 +248,6 @@ export default function CommercePage() {
           </div>
         </div>
       </section>
-      <FurnitureSection />
     </div>
   );
 }

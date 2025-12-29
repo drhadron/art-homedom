@@ -1,18 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import FurnitureSection from "@/components/FurnitureSection";
 
 const serviceCards = [
   {
     title: "Дизайн проект",
-    description: "Планировки, визуализации, ведомости и подбор материалов под реализацию.",
+    description: "Перепланировка по БТИ, визуализации комнат, ведомости отделки/мебели/света и подбор материалов.",
     image: "/Image/image copy 18.png",
     href: "/services/design/kvartiry",
     price: "От 3 500 за м²",
   },
   {
     title: "Чертежи",
-    description: "Рабочие листы: электрика, сантехника, узлы, раскладки — без вопросов подрядчикам.",
+    description: "Рабочие листы квартиры: электрика, сантехника, узлы раскладок и спецификации для подрядчиков.",
     image: "/Image/image copy 13.png",
     href: "/services/plan/kvartiry",
     price: "От 800 за м²",
@@ -143,7 +142,7 @@ export default function KvartiryPage() {
                   </div>
                   <Link
                     href={service.href || "/contacts"}
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg
@@ -209,7 +208,6 @@ export default function KvartiryPage() {
           </div>
         </div>
       </section>
-      <FurnitureSection />
     </div>
   );
 }

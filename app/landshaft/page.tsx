@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import FurnitureSection from "@/components/FurnitureSection";
 
 const serviceCards = [
   {
@@ -17,6 +16,19 @@ const cases = [
   { src: "/Image/image copy 4.png", title: "Ландшафтные акценты" },
   { src: "/Image/image copy 5.png", title: "Освещение и дорожки" },
   { src: "/Image/image copy 14.png", title: "Малые формы" },
+];
+
+const descriptionItems = [
+  "Анализ участка и обмеры (границы, рельеф, существующие объекты)",
+  "Концепция благоустройства и зонирование (въезд, парковка, отдых, детская/спорт, барбекю)",
+  "Генеральный план двора с привязками и размерами",
+  "План мощения и покрытий (дорожки, площадки, терраса, бордюры)",
+  "План озеленения и подбор растений (деревья, кустарники, цветники, газон)",
+  "Схемы освещения участка и декоративной подсветки (при необходимости)",
+  "Дренаж и ливневая схема, водоотведение (при необходимости)",
+  "Система автополива (по запросу)",
+  "Узлы и детали (подпорные стенки, ступени, клумбы, ограждения)",
+  "Ведомости и спецификации материалов/растений (по проекту)",
 ];
 
 export default function LandshaftPage() {
@@ -95,6 +107,37 @@ export default function LandshaftPage() {
         </div>
       </section>
 
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-18">
+        <div className="mx-auto max-w-6xl space-y-6 px-4 md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">
+              Ландшафтный проект двора частного дома — что входит
+            </h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Ландшафтный проект двора частного дома — это комплексная разработка благоустройства участка,
+              которая превращает территорию вокруг дома в удобное и красивое пространство для жизни и отдыха.
+              Проект учитывает рельеф, освещённость, климат, стиль дома и ваш образ жизни, чтобы двор был
+              функциональным, ухоженным и простым в обслуживании. В услугу обычно входит:
+            </p>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {descriptionItems.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm leading-relaxed text-white/75 md:text-base">
+            Заказывая ландшафтный дизайн двора частного дома, вы получаете понятный план работ для подрядчиков,
+            точные чертежи и продуманное благоустройство, которое повышает комфорт и ценность недвижимости.
+          </p>
+        </div>
+      </section>
+
       <section className="w-full overflow-hidden bg-[var(--bg)] py-12 md:py-18">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="space-y-4">
@@ -136,7 +179,7 @@ export default function LandshaftPage() {
                   </div>
                   <Link
                     href="/contacts"
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg
@@ -202,7 +245,6 @@ export default function LandshaftPage() {
           </div>
         </div>
       </section>
-      <FurnitureSection />
     </div>
   );
 }

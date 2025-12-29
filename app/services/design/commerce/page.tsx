@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignProjectScope } from "@/components/DesignProjectScope";
+
 const included = [
-  "Планировки, зонирование потоков и сценарии использования пространства",
-  "Визуализации, ведомости отделки, мебели и света под бренд",
-  "Чертежи: инженерия, узлы, раскладки, спецификации",
-  "Подбор материалов и снабжение под проект",
-  "Авторский надзор и контроль изменений",
+  "Планировки и зонирование потоков гостей, сотрудников и логистики",
+  "Визуализации и ведомости отделки, мебели и света под бренд и нормы",
+  "Чертежи: технический план и 3D-модель в Revit, инженерия, узлы, раскладки, спецификации и согласования",
+  "Спецификация всех материалов, оборудования и отделки под бренд и нормы",
+  "3D Max визуализации по ключевым зонам и витринам для согласований",
+  "Подбор материалов и оборудования под бюджет проекта",
+  "Авторский надзор и контроль изменений на площадке",
 ];
 
 const risks = [
@@ -14,6 +18,13 @@ const risks = [
   "Нарушения норм и требований — риск штрафов и закрытий",
   "Неэффективная логистика: очереди, пересечения потоков, низкая выручка",
   "Бюджет неуправляем: закупки без смет и ведомостей",
+];
+
+const caseImages = [
+  { src: "/Image/image copy 2.png", alt: "Кейс коммерции 1" },
+  { src: "/Image/image copy 24.png", alt: "Кейс коммерции 2" },
+  { src: "/Image/image copy 20.png", alt: "Кейс коммерции 3" },
+  { src: "/Image/image copy 21.png", alt: "Кейс коммерции 4" },
 ];
 
 export default function DesignCommercePage() {
@@ -82,28 +93,56 @@ export default function DesignCommercePage() {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что такое дизайн-проект</h2>
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-8 space-y-3 text-white">
+            <h2 className="text-2xl font-semibold md:text-3xl">Дизайн-проект коммерции — что входит</h2>
             <p className="text-base leading-relaxed text-white/75 md:text-lg">
-              Комплект решений: планировки, визуализации, ведомости, чертежи инженерии и узлов, чтобы
-              подрядчики запускали объект без простоев и переделок.
+              Для коммерции дизайн-проект — это планировки и зонирование потоков, визуализации под бренд, ведомости и
+              рабочие чертежи инженерии с соблюдением норм. Он сокращает простои, исключает переделки и готовит объект к
+              открытию без штрафов.
             </p>
-          </div>
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что входит</h2>
-            <ul className="space-y-2 text-white/80">
+            <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
               {included.map((item) => (
-                <li key={item} className="flex gap-3 text-sm md:text-base">
+                <li key={item} className="flex gap-2">
                   <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
-                  <span className="leading-relaxed">{item}</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
+            <p className="text-sm leading-relaxed text-white/70 md:text-base">
+              Итоговый комплект упрощает согласования, дает подрядчикам точные узлы и спецификации и ускоряет запуск
+              торговых площадей без простоя.
+            </p>
           </div>
         </div>
       </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-8 md:pb-12">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Кейсы</h2>
+            <Link href="/cases#design-commerce" className="text-sm text-[var(--orange)] hover:underline">
+              Все кейсы
+            </Link>
+          </div>
+          <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2">
+            {caseImages.map((item) => (
+              <div
+                key={item.src}
+                className="relative h-40 w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[var(--surface)] md:h-48 md:w-80"
+              >
+                <Image src={item.src} alt={item.alt} fill className="object-cover" sizes="320px" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-sm text-white/90">
+                  {item.alt}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <DesignProjectScope />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">

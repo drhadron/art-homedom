@@ -1,11 +1,25 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { PlanBvhEffect } from "@/components/PlanBvhEffect";
 
 const includes = [
   "Дренаж, освещение, покрытие и дорожки",
   "Навигация, малые формы, посадочные места",
   "Инженерные узлы и спецификации для подрядчиков",
   "Ведомости и сметы для закупок и работ",
+];
+
+const descriptionItems = [
+  "Ситуационный план и анализ участка (границы, рельеф, существующие объекты)",
+  "Генеральный план благоустройства с зонированием и привязками",
+  "Вертикальная планировка (отметки, уклоны, водоотведение)",
+  "План покрытий и мощения (материалы, раскладка, бордюры)",
+  "План дорожек, площадок, подъездов и парковок",
+  "План озеленения (посадки, ассортимент, схемы)",
+  "План освещения территории и электрики (при необходимости)",
+  "Схемы полива и дренажа (при необходимости)",
+  "Разрезы, узлы и детали конструкций (подпорные стенки, ступени, террасы)",
+  "Спецификации и ведомости материалов (по проекту)",
 ];
 
 const risks = [
@@ -33,14 +47,8 @@ export default function PlanTerritoriiPage() {
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 19.png"
-                      alt="Чертежи территорий"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                    <PlanBvhEffect />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -66,17 +74,40 @@ export default function PlanTerritoriiPage() {
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 19.png"
-                  alt="Чертежи территорий"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+                <PlanBvhEffect />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-16">
+        <div className="mx-auto max-w-6xl space-y-6 px-4 md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Чертежи территорий — что входит</h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Чертежи территорий — это комплект проектной и рабочей документации для благоустройства участка и
+              ландшафтных работ. По ним выполняют планировку, мощение, озеленение и монтаж инженерных систем на
+              территории без ошибок и переделок. Мы разрабатываем чертежи для частных участков, коттеджных
+              посёлков, коммерческих объектов и общественных пространств. В состав услуги обычно входят:
+            </p>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {descriptionItems.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm leading-relaxed text-white/75 md:text-base">
+            Заказывая чертежи благоустройства и ландшафтного проектирования, вы получаете точную документацию
+            для подрядчиков, контроль бюджета и понятный план реализации территории “под ключ”.
+          </p>
         </div>
       </section>
 

@@ -1,12 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignIblEffect } from "@/components/DesignIblEffect";
+import { DesignProjectScope } from "@/components/DesignProjectScope";
+
 const included = [
-  "Планировки, эргономика, сценарии использования пространства",
-  "Визуализации с ведомостями отделки, мебели и света",
-  "Чертежи: электрика, сантехника, узлы, раскладки, спецификации",
-  "Подбор материалов и снабжение под проект",
-  "Авторский надзор и контроль изменений",
+  "Планировки и перепланировка с учётом БТИ, мокрых зон и эргономики",
+  "Визуализации по всем комнатам с ведомостями отделки, мебели и света",
+  "Чертежи: технический план и 3D-модель в Revit, электрика, сантехника, узлы раскладок и спецификации для подрядчиков",
+  "Спецификация всех материалов, света, мебели и оборудования по проекту",
+  "3D Max визуализации по всем помещениям для согласования с подрядчиками",
+  "Подбор материалов, мебели и света под бюджет, снабжение без задержек",
+  "Авторский надзор и контроль изменений на стройке",
 ];
 
 const risks = [
@@ -14,6 +19,13 @@ const risks = [
   "Срывы сроков: подрядчики задают лишние вопросы или делают «как привыкли»",
   "Несостыковки инженерии и отделки: розетки, свет и мебель не совпадают",
   "Непрозрачный бюджет: закупки без смет и ведомостей",
+];
+
+const caseImages = [
+  { src: "/Image/image copy 18.png", alt: "Кейс квартиры 1" },
+  { src: "/Image/image copy 12.png", alt: "Кейс квартиры 2" },
+  { src: "/Image/image copy 9.png", alt: "Кейс квартиры 3" },
+  { src: "/Image/image copy 8.png", alt: "Кейс квартиры 4" },
 ];
 
 export default function DesignKvartiryPage() {
@@ -34,15 +46,8 @@ export default function DesignKvartiryPage() {
                   Дизайн-проект квартиры окупается на стройке
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 18.png"
-                      alt="Дизайн-проект квартиры"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                  <div className="relative aspect-[4/3] w-full bg-black">
+                    <DesignIblEffect />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -67,44 +72,64 @@ export default function DesignKvartiryPage() {
             </div>
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 18.png"
-                  alt="Дизайн-проект квартиры"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+              <div className="relative aspect-[4/3] w-full bg-black">
+                <DesignIblEffect />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что такое дизайн-проект</h2>
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-8 space-y-3 text-white">
+            <h2 className="text-2xl font-semibold md:text-3xl">Дизайн-проект квартиры — что входит</h2>
             <p className="text-base leading-relaxed text-white/75 md:text-lg">
-              Это полный комплект решений: планировки, визуализации, ведомости и чертежи, по которым
-              подрядчики делают работу без вопросов. Мы добавляем снабжение и авторский надзор, чтобы
-              результат совпал с проектом.
+              Для квартиры дизайн-проект — это перепланировка с учётом БТИ, визуализации по комнатам, ведомости и рабочие
+              чертежи инженерии. Он закрывает мокрые зоны, хранение и свет, чтобы подрядчики собирали интерьер без
+              переделок и переплат.
             </p>
-          </div>
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что входит</h2>
-            <ul className="space-y-2 text-white/80">
+            <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
               {included.map((item) => (
-                <li key={item} className="flex gap-3 text-sm md:text-base">
+                <li key={item} className="flex gap-2">
                   <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
-                  <span className="leading-relaxed">{item}</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
+            <p className="text-sm leading-relaxed text-white/70 md:text-base">
+              Итогом становится полный комплект визуализаций, спецификаций и чертежей: строители понимают точки,
+              материалы и последовательность работ, а заказчик — сроки и бюджет.
+            </p>
           </div>
         </div>
       </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-8 md:pb-12">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Кейсы</h2>
+            <Link href="/cases#design-kvartiry" className="text-sm text-[var(--orange)] hover:underline">
+              Все кейсы
+            </Link>
+          </div>
+          <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2">
+            {caseImages.map((item) => (
+              <div
+                key={item.src}
+                className="relative h-40 w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[var(--surface)] md:h-48 md:w-80"
+              >
+                <Image src={item.src} alt={item.alt} fill className="object-cover" sizes="320px" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-sm text-white/90">
+                  {item.alt}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <DesignProjectScope />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">

@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { ShieldCheck, Sparkles } from "lucide-react";
+
+import { DesignHomeMaskEffect } from "@/components/DesignHomeMaskEffect";
 
 export function Hero() {
   return (
@@ -14,15 +15,8 @@ export function Hero() {
                 Проекты, которые строятся — без сюрпризов на стройке
               </h1>
               <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[var(--surface)] shadow-[0_25px_80px_-45px_rgba(0,0,0,0.8)] lg:hidden">
-                <div className="relative aspect-[4/3] w-full">
-                  <Image
-                    src="/Image/image copy 10.png"
-                    alt="Визуализация проекта"
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                    priority
-                  />
+                <div className="relative aspect-[4/3] w-full bg-black">
+                  <DesignHomeMaskEffect />
                 </div>
               </div>
               <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
@@ -49,26 +43,22 @@ export function Hero() {
               Ответим по делу: сроки, состав проекта, этапы, стоимость. Без
               “продажных” созвонов.
             </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 lg:hidden">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--green)]" aria-hidden />
+              Архитектурное проектирование • Архитектурный дизайн • Авторский надзор
+            </div>
           </div>
 
-            <div className="order-2 hidden lg:flex lg:flex-col lg:space-y-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[var(--surface)] shadow-[0_25px_80px_-45px_rgba(0,0,0,0.8)]">
-              <div className="pointer-events-none absolute -right-10 top-1/4 h-48 w-48 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,106,0,0.22),transparent_60%)] blur-3xl" />
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 10.png"
-                  alt="Визуализация проекта"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
-              </div>
-            </div>
+          <div className="order-2 hidden lg:flex lg:flex-col lg:space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--green)]" aria-hidden />
-              Архитектурное проектирование • Архитектурный дизайн • Авторский
-              надзор
+              Архитектурное проектирование • Архитектурный дизайн • Авторский надзор
+            </div>
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[var(--surface)] shadow-[0_25px_80px_-45px_rgba(0,0,0,0.8)]">
+              <div className="pointer-events-none absolute -right-10 top-1/4 h-48 w-48 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,106,0,0.22),transparent_60%)] blur-3xl" />
+              <div className="relative aspect-[4/3] w-full bg-black">
+                <DesignHomeMaskEffect />
+              </div>
             </div>
           </div>
         </div>

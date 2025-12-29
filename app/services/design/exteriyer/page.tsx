@@ -1,12 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const exteriyerCards = [
+  {
+    title: "Дома и коттеджи",
+    desc: "Фасады, входные группы и навигация под стиль дома и нормы поселка. Узлы креплений и ведомости для подрядчика.",
+    image: "/Image/image copy 16.png",
+    href: "/services/design/exteriyer/doma",
+    caseHref: "/cases#design-exteriyer",
+  },
+  {
+    title: "Коммерческие здания",
+    desc: "Вывески, витрины, подсветка и входные группы, согласованные с брендом и требованиями города.",
+    image: "/Image/image copy 2.png",
+    href: "/services/design/exteriyer/commerce",
+    caseHref: "/cases#design-exteriyer",
+  },
+  {
+    title: "Многоквартирные комплексы",
+    desc: "Фасады и входные группы с учетом эксплуатационных нагрузок, логистики жильцов и требований управляющей компании.",
+    image: "/Image/image copy 5.png",
+    href: "/services/design/exteriyer/complex",
+    caseHref: "/cases#design-exteriyer",
+  },
+];
+
 const included = [
-  "Фасады, входные группы, навигация и витрины",
-  "Визуализации и ведомости отделки, света, вывесок",
-  "Чертежи узлов, креплений, светотехники и благоустройства",
-  "Подбор материалов и снабжение под проект",
-  "Авторский надзор и контроль монтажа",
+  "Фасады, входные группы, навигация и витрины под бренд и нормы города",
+  "Визуализации и ведомости отделки, светотехники, вывесок и навигации",
+  "Чертежи узлов, креплений, светотехники и элементов благоустройства",
+  "Подбор фасадных материалов, вывесок и снабжение под проект",
+  "Авторский надзор и контроль монтажа на площадке",
+];
+
+const exteriyerScope = [
+  "Обмеры и анализ существующих фасадов, входных групп и рельефа",
+  "Концепция фасадов и входных групп под бренд/стилистику здания",
+  "3D-визуализации фасадов и входной зоны для согласования",
+  "Чертежи фасадов с отметками, материалами и узлами креплений",
+  "Узлы и детали: витражи, порталы, козырьки, примыкания, откосы",
+  "Светотехника и подсветка вывесок/фасадов, схемы электрики",
+  "Навигация и вывески: размещение, размеры, крепления",
+  "Решения по благоустройству у входа: покрытие, ступени/пандус, ограждения",
+  "Согласование материалов и узлов под нормы города/ТР ТС (при необходимости)",
+  "Спецификации и ведомости материалов, вывесок и крепежа для подрядчиков",
 ];
 
 const risks = [
@@ -14,6 +51,13 @@ const risks = [
   "Переделки и задержки из-за отсутствия узлов и спецификаций",
   "Неправильная светотехника и вывески — штрафы и потери видимости",
   "Неудобные входные группы и навигация — потеря трафика",
+];
+
+const caseImages = [
+  { src: "/Image/image copy 16.png", alt: "Кейс экстерьера 1" },
+  { src: "/Image/image copy 2.png", alt: "Кейс экстерьера 2" },
+  { src: "/Image/image copy 5.png", alt: "Кейс экстерьера 3" },
+  { src: "/Image/image copy 15.png", alt: "Кейс экстерьера 4" },
 ];
 
 export default function DesignExteriyerPage() {
@@ -82,25 +126,149 @@ export default function DesignExteriyerPage() {
         </div>
       </section>
 
-      <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что такое дизайн-проект</h2>
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-16">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-6 space-y-2">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Форматы экстерьера</h2>
             <p className="text-base leading-relaxed text-white/75 md:text-lg">
-              Полный комплект фасадных решений: визуализации, ведомости, узлы, свет и навигация. Подготовим
-              материалы, снабдим и проконтролируем монтаж.
+              Под каждый тип объекта собираем отдельный комплект визуализаций, узлов и ведомостей — чтобы стройка шла без переделок.
             </p>
           </div>
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что входит</h2>
-            <ul className="space-y-2 text-white/80">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {exteriyerCards.map((card) => (
+              <div
+                key={card.title}
+                className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--surface)] text-white"
+              >
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 320px, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
+                </div>
+                <div className="flex flex-1 flex-col justify-between px-4 py-4">
+                  <div className="space-y-2">
+                    <div className="text-lg font-semibold">{card.title}</div>
+                    <p className="text-sm leading-relaxed text-white/70">{card.desc}</p>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link
+                      href={card.href}
+                      className="inline-flex items-center gap-2 text-[var(--green)] transition hover:underline"
+                    >
+                      Обсудить
+                      <svg
+                        className="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </Link>
+                    <Link
+                      href={card.caseHref}
+                      className="inline-flex items-center gap-2 text-white/80 underline-offset-4 transition hover:text-[var(--green)]"
+                    >
+                      Кейсы
+                      <svg
+                        className="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden
+                      >
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-8 space-y-3 text-white">
+            <h2 className="text-2xl font-semibold md:text-3xl">Дизайн-проект экстерьера — что входит</h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Для экстерьера дизайн-проект — это фасады, входные группы и навигация с узлами креплений, светотехникой и
+              требованиями города/бренда. Готовим визуализации, ведомости и чертежи, чтобы монтаж прошёл быстро и без
+              переделок.
+            </p>
+            <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
               {included.map((item) => (
-                <li key={item} className="flex gap-3 text-sm md:text-base">
+                <li key={item} className="flex gap-2">
                   <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
-                  <span className="leading-relaxed">{item}</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
+            <p className="text-sm leading-relaxed text-white/70 md:text-base">
+              В результате подрядчики получают понятные узлы, схемы света и спецификации материалов, а фасады и входные
+              группы реализуются без штрафов и переделок.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-16">
+        <div className="mx-auto max-w-6xl space-y-6 px-4 md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">
+              Дизайн-проект экстерьера — что входит
+            </h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Для экстерьера мы собираем единый комплект фасадных решений, входных групп и навигации — с
+              визуализациями, узлами, светотехникой и ведомостями, чтобы монтаж прошёл без переделок и штрафов.
+            </p>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {exteriyerScope.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-8 md:pb-12">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">Кейсы</h2>
+            <Link href="/cases#design-exteriyer" className="text-sm text-[var(--orange)] hover:underline">
+              Все кейсы
+            </Link>
+          </div>
+          <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2">
+            {caseImages.map((item) => (
+              <div
+                key={item.src}
+                className="relative h-40 w-64 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[var(--surface)] md:h-48 md:w-80"
+              >
+                <Image src={item.src} alt={item.alt} fill className="object-cover" sizes="320px" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/50 to-transparent p-3 text-sm text-white/90">
+                  {item.alt}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

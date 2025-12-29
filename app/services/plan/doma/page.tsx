@@ -1,11 +1,24 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { PlanBvhEffect } from "@/components/PlanBvhEffect";
 
 const includes = [
   "Планировки, фасады, инженерные узлы и раскладки",
   "Спецификации материалов, мебели, света и оборудования",
   "Чертежи: электрика, сантехника, конструктив и отделка",
   "Ведомости и сметы для закупок и работы подрядчиков",
+];
+
+const descriptionItems = [
+  "Обмеры и анализ участка (при необходимости)",
+  "Поэтажные планы с размерами и привязками",
+  "Фасады, разрезы и высотные отметки",
+  "План кровли и конструктивные решения",
+  "Планы полов, потолков, отделки и узлы",
+  "Чертежи лестниц, проёмов, окон и дверей",
+  "Схемы электрики: освещение, розетки, выключатели, слаботочные сети",
+  "Инженерные чертежи: отопление, водоснабжение, канализация, вентиляция/кондиционирование",
+  "Спецификации материалов и ведомости (по проекту)",
 ];
 
 const risks = [
@@ -33,14 +46,8 @@ export default function PlanDomaPage() {
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 11.png"
-                      alt="Чертежи дома"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                    <PlanBvhEffect />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -66,17 +73,43 @@ export default function PlanDomaPage() {
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 11.png"
-                  alt="Чертежи дома"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+                <PlanBvhEffect />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-16">
+        <div className="mx-auto max-w-6xl space-y-6 px-4 md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">
+              Чертежи частного дома — что входит
+            </h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Чертежи частного дома — это комплект архитектурной и рабочей документации, по которому выполняют
+              строительство, отделку и монтаж инженерных систем без ошибок и переделок. Мы разрабатываем
+              чертежи для коттеджей, загородных домов, таунхаусов и домов в реконструкции — с учётом участка,
+              планировки и пожеланий по стилю. В состав услуги обычно входят:
+            </p>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {descriptionItems.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm leading-relaxed text-white/75 md:text-base">
+            Заказывая рабочие чертежи частного дома, вы получаете точный план строительства, понятный для
+            подрядчиков, контроль бюджета и сроков, а также уверенность, что дом будет реализован так, как
+            задуман в проекте.
+          </p>
         </div>
       </section>
 

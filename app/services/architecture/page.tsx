@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignHomeMaskEffect } from "@/components/DesignHomeMaskEffect";
+
 const architectureCards = [
   {
     title: "Дома",
@@ -43,15 +45,8 @@ export default function ArchitectureServicesPage() {
                   Архитектура, которая реализуется без сюрпризов
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 15.png"
-                      alt="Архитектурный проект"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                  <div className="relative aspect-[4/3] w-full bg-black">
+                    <DesignHomeMaskEffect />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -76,15 +71,8 @@ export default function ArchitectureServicesPage() {
             </div>
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 15.png"
-                  alt="Архитектурный проект"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+              <div className="relative aspect-[4/3] w-full bg-black">
+                <DesignHomeMaskEffect />
               </div>
             </div>
           </div>
@@ -93,6 +81,54 @@ export default function ArchitectureServicesPage() {
 
       <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="mb-8 space-y-3 text-white">
+            <h2 className="text-2xl font-semibold md:text-3xl">Архитектурный проект дома — что входит</h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Архитектурный проект дома — это профессиональная разработка концепции и полного комплекта
+              архитектурных решений для строительства частного дома. Проект определяет внешний вид, планировку,
+              габариты и основные конструктивные принципы, учитывает особенности участка, нормы и ваши пожелания
+              по стилю и функциональности. В услугу обычно входит:
+            </p>
+            <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>Предпроектный анализ: участок, ориентация, подъезды, ограничения и нормы</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>Планировочные решения: поэтажные планы, зонирование, площади помещений</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>3D-визуализация/эскизы экстерьера для понимания итогового вида</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>Фасады с материалами и высотными отметками</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>Разрезы здания и ключевые конструктивные узлы</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>План кровли и основные параметры конструкции</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>Ведомость помещений и основные спецификации (по необходимости)</span>
+              </li>
+              <li className="flex gap-2 md:col-span-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span>Подготовка архитектурной документации для согласования и строительства</span>
+              </li>
+            </ul>
+            <p className="text-sm leading-relaxed text-white/70 md:text-base">
+              Заказывая архитектурный проект частного дома, вы получаете продуманную планировку, точные чертежи
+              и понятную базу для дальнейшего проектирования инженерных сетей и строительства без лишних затрат
+              и переделок.
+            </p>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {architectureCards.map((card) => (
               <div
@@ -121,7 +157,7 @@ export default function ArchitectureServicesPage() {
                   </div>
                   <Link
                     href={card.href || "/contacts"}
-                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)] transition hover:underline"
+                    className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее
                     <svg

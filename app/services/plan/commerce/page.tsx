@@ -1,11 +1,24 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { PlanBvhEffect } from "@/components/PlanBvhEffect";
 
 const includes = [
   "Планировки, инженерия, узлы и раскладки для коммерческих помещений",
   "Спецификации материалов, оборудования и света",
   "Ведомости и сметы для закупок и подрядчиков",
   "Узлы креплений, схемы вентиляции и электрики",
+];
+
+const descriptionItems = [
+  "Обмерный план и техническое обследование помещения/здания",
+  "Планировочные решения и зонирование под бизнес-задачи",
+  "Планы демонтажа и монтажа перегородок",
+  "Рабочие планы полов, потолков и отделочных решений",
+  "Чертежи электрики: освещение, силовые линии, розетки, слаботочные системы",
+  "Чертежи инженерных сетей: водоснабжение, канализация, отопление, вентиляция и кондиционирование (ОВиК)",
+  "Планы размещения оборудования, мебели и технологических зон",
+  "Развертки стен и узлы/детали для строителей",
+  "Спецификации и ведомости материалов (по необходимости)",
 ];
 
 const risks = [
@@ -34,14 +47,8 @@ export default function PlanCommercePage() {
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 13.png"
-                      alt="Чертежи коммерческих помещений"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                    <PlanBvhEffect />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -67,17 +74,44 @@ export default function PlanCommercePage() {
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 13.png"
-                  alt="Чертежи коммерческих помещений"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+                <PlanBvhEffect />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(255,106,0,0.2)] via-transparent to-white/5" />
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-16">
+        <div className="mx-auto max-w-6xl space-y-6 px-4 md:px-6">
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl">
+              Чертежи коммерческих помещений и зданий — что входит
+            </h2>
+            <p className="text-base leading-relaxed text-white/75 md:text-lg">
+              Чертежи коммерческих помещений и зданий — это полный комплект рабочей документации для ремонта,
+              реконструкции или строительства, который помогает точно рассчитать объёмы работ, согласовать
+              решения и выполнить монтаж без ошибок. Мы разрабатываем чертежи для офисов, магазинов,
+              ресторанов, салонов, складов и других объектов коммерческой недвижимости. В состав услуги
+              обычно входят:
+            </p>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {descriptionItems.map((item) => (
+              <li
+                key={item}
+                className="flex gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] px-4 py-3 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm leading-relaxed text-white/75 md:text-base">
+            Заказывая у нас архитектурные чертежи и рабочие чертежи для коммерческих помещений, вы получаете
+            понятную и точную документацию для подрядчиков, сокращение сроков ремонта и контроль бюджета на
+            всех этапах проекта.
+          </p>
         </div>
       </section>
 

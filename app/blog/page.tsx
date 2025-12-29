@@ -130,7 +130,7 @@ export default function BlogPage() {
                     <h3 className="text-lg font-semibold leading-tight">{post.title}</h3>
                     <p className="text-sm text-white/70">{post.excerpt}</p>
                   </div>
-                  <div className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--orange)]">
+                  <div className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)]">
                     Читать
                     <svg
                       className="h-4 w-4"
