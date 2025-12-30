@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignIblEffect } from "@/components/DesignIblEffect";
 const exteriyerCards = [
   {
     title: "Дома и коттеджи",
@@ -75,18 +76,21 @@ export default function DesignExteriyerPage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Экстерьер окупает себя на этапе стройки
+                  Дизайн-проект в 100% случаев окупается на этапе стройки
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 16.png"
+                      src="/Image/image copy 35.png"
                       alt="Дизайн экстерьера"
                       fill
-                      className="object-cover"
+                      className="object-cover opacity-70"
                       sizes="100vw"
                       priority
                     />
+                    <div className="absolute inset-0 bg-black/70" />
+                    <DesignIblEffect textureSrc="/Image/image copy 35.png" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -96,10 +100,10 @@ export default function DesignExteriyerPage() {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
-                  href="/contacts"
+                  href="/services/design/exteriyer"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--orange)] px-6 py-3 text-base font-semibold text-[var(--bg)] shadow-[0_10px_40px_rgba(255,106,0,0.25)] transition duration-200 hover:translate-y-[-1px] hover:shadow-[0_14px_50px_rgba(255,106,0,0.3)]"
                 >
-                  Обсудить экстерьер
+                  Подробнее
                 </Link>
                 <Link
                   href="/cases#design-exteriyer"
@@ -113,13 +117,16 @@ export default function DesignExteriyerPage() {
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 16.png"
+                  src="/Image/image copy 35.png"
                   alt="Дизайн экстерьера"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-70"
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
+                <div className="absolute inset-0 bg-black/70" />
+                <DesignIblEffect textureSrc="/Image/image copy 35.png" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>
@@ -160,7 +167,7 @@ export default function DesignExteriyerPage() {
                       href={card.href}
                       className="inline-flex items-center gap-2 text-[var(--green)] transition hover:underline"
                     >
-                      Обсудить
+                      Подробнее
                       <svg
                         className="h-4 w-4"
                         viewBox="0 0 24 24"
@@ -199,14 +206,38 @@ export default function DesignExteriyerPage() {
         </div>
       </section>
 
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-14">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <h3 className="text-xl font-semibold text-white md:text-2xl">Коммерческий экстерьер — что важно</h3>
+          <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Фасады, витрины и вывески в едином стиле бренда и под нормы города</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Светотехника и подсветка вывесок: схемы электрики, подбор оборудования</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Навигация и входные группы: сценарии трафика, удобство и читаемость</span>
+            </li>
+            <li className="flex gap-2 md:col-span-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Узлы и спецификации для подрядчиков + сопровождение согласований, чтобы избежать штрафов и простоев</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="mb-8 space-y-3 text-white">
             <h2 className="text-2xl font-semibold md:text-3xl">Дизайн-проект экстерьера — что входит</h2>
             <p className="text-base leading-relaxed text-white/75 md:text-lg">
               Для экстерьера дизайн-проект — это фасады, входные группы и навигация с узлами креплений, светотехникой и
-              требованиями города/бренда. Готовим визуализации, ведомости и чертежи, чтобы монтаж прошёл быстро и без
-              переделок.
+              требованиями города/бренда. Включаем материалы, схемы света, вывески и спецификации, чтобы монтаж прошёл
+              быстро и без переделок.
             </p>
             <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
               {included.map((item) => (
@@ -231,8 +262,8 @@ export default function DesignExteriyerPage() {
               Дизайн-проект экстерьера — что входит
             </h2>
             <p className="text-base leading-relaxed text-white/75 md:text-lg">
-              Для экстерьера мы собираем единый комплект фасадных решений, входных групп и навигации — с
-              визуализациями, узлами, светотехникой и ведомостями, чтобы монтаж прошёл без переделок и штрафов.
+              Для экстерьера мы собираем комплект фасадных решений, входных групп и навигации — с визуализациями,
+              узлами, светотехникой, вывесками и ведомостями, чтобы монтаж прошёл без переделок и штрафов.
             </p>
           </div>
           <ul className="grid gap-3 md:grid-cols-2">

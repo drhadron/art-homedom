@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { DesignHomeMaskEffect } from "@/components/DesignHomeMaskEffect";
+import { DesignIblEffect } from "@/components/DesignIblEffect";
 import { DesignProjectScope } from "@/components/DesignProjectScope";
 
 const included = [
@@ -21,6 +21,14 @@ const risks = [
   "Непрозрачный бюджет: закупки без смет и спецификаций",
 ];
 
+const projectScopeItems = [
+  "Посадка дома на участок и планировки с учётом инженерии",
+  "Фасады, кровля и узлы примыканий, чтобы строители не гадали",
+  "Планы электрики, слаботочки, отопления, водоснабжения и вентиляции",
+  "Спецификации отделки, фасадных материалов, света и мебели",
+  "3D визуализации интерьера/экстерьера для согласования с подрядчиками",
+  "Рабочие узлы и детали (лестницы, витражи, санузлы, кухни)",
+];
 const caseImages = [
   { src: "/Image/image copy 11.png", alt: "Кейс дома 1" },
   { src: "/Image/image copy 16.png", alt: "Кейс дома 2" },
@@ -43,19 +51,21 @@ export default function DesignDomaPage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Дизайн-проект дома окупается на стройке
+                  Дизайн-проект в 100% случаев окупается на этапе стройки
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
-                  <div className="relative aspect-[4/3] w-full bg-black">
+                  <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 11.png"
+                      src="/Image/image copy 32.png"
                       alt="Дизайн-проект дома визуализация"
                       fill
-                      className="object-cover opacity-60"
+                      className="object-cover opacity-70"
                       sizes="100vw"
                       priority
                     />
-                    <DesignHomeMaskEffect />
+                    <div className="absolute inset-0 bg-black/70" />
+                    <DesignIblEffect textureSrc="/Image/image copy 32.png" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -80,16 +90,18 @@ export default function DesignDomaPage() {
             </div>
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
-              <div className="relative aspect-[4/3] w-full bg-black">
+              <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 16.png"
+                  src="/Image/image copy 32.png"
                   alt="Дизайн-проект дома интерьер"
                   fill
-                  className="object-cover opacity-60"
+                  className="object-cover opacity-70"
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
-                <DesignHomeMaskEffect />
+                <div className="absolute inset-0 bg-black/70" />
+                <DesignIblEffect textureSrc="/Image/image copy 32.png" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>
@@ -145,7 +157,11 @@ export default function DesignDomaPage() {
         </div>
       </section>
 
-      <DesignProjectScope />
+      <DesignProjectScope
+        title="Из чего состоит дизайн-проект дома"
+        description="Связываем интерьер, экстерьер и инженерию в одном комплекте, чтобы строители работали без переделок."
+        items={projectScopeItems}
+      />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">

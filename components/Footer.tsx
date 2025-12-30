@@ -2,8 +2,6 @@ import Link from "next/link";
 
 const navLinks = [
   { name: "Главная", href: "/" },
-  { name: "Услуги", href: "/services" },
-  { name: "Типы проектов", href: "/projects" },
   { name: "Портфолио", href: "/cases" },
   { name: "Блог", href: "/blog" },
   { name: "Команда", href: "/team" },
@@ -18,9 +16,10 @@ const serviceLinks = [
 ];
 
 const objectLinks = [
+  { name: "Коммерческие помещения", href: "/commerce" },
+  { name: "Частные дома", href: "/doma" },
   { name: "Квартиры", href: "/kvartiry" },
-  { name: "Дома", href: "/doma" },
-  { name: "Коммерция", href: "/commerce" },
+  { name: "Ландшафтный дизайн", href: "/landshaft" },
   { name: "Двор МКД", href: "/services/landscape/mnogokvartir" },
   { name: "Парки и водоёмы", href: "/services/landscape/park" },
 ];
@@ -50,7 +49,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="transition hover:text-[var(--green)]">
+                  <Link href={link.href} className="transition hover:text-[var(--orange)]">
                     {link.name}
                   </Link>
                 </li>
@@ -63,7 +62,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="transition hover:text-[var(--green)]">
+                  <Link href={link.href} className="transition hover:text-[var(--orange)]">
                     {link.name}
                   </Link>
                 </li>
@@ -76,17 +75,17 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               {objectLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="transition hover:text-[var(--green)]">
+                  <Link href={link.href} className="transition hover:text-[var(--orange)]">
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
             <div className="space-y-1 text-sm text-white/70">
-              <Link href="https://wa.me/79386903838" className="block hover:text-[var(--green)]">
+              <Link href="https://wa.me/79386903838" className="block text-[var(--orange)] transition hover:text-[var(--orange)]">
                 +7 (938) 690-38-38
               </Link>
-              <a href="mailto:info@homedom.shop" className="block hover:text-[var(--green)]">
+              <a href="mailto:info@homedom.shop" className="block hover:text-[var(--orange)]">
                 info@homedom.shop
               </a>
             </div>
@@ -95,7 +94,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap gap-4">
-            <Link href="/policy" className="hover:text-[var(--green)]">
+            <Link href="/policy" className="hover:text-[var(--orange)]">
               Политика конфиденциальности
             </Link>
             <span>© {new Date().getFullYear()} Art HomeDom</span>
@@ -104,7 +103,7 @@ export function Footer() {
             href="https://tehnopolyus.com"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-[var(--green)]"
+            className="hover:text-[var(--orange)]"
           >
             <span className="text-white">Сайт разработан </span>
             <span className="text-blue-400 underline">tehnopolyus.com</span>

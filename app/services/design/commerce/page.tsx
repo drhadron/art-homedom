@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignIblEffect } from "@/components/DesignIblEffect";
 import { DesignProjectScope } from "@/components/DesignProjectScope";
 
 const included = [
@@ -27,6 +28,15 @@ const caseImages = [
   { src: "/Image/image copy 21.png", alt: "Кейс коммерции 4" },
 ];
 
+const projectScopeItems = [
+  "Планировки и зонирование потоков гостей/персонала + технологические линии",
+  "Планы электрики, силовых линий и слаботочки под оборудование и бренд",
+  "ОВиК: вентиляция, кондиционирование, отопление с узлами и спецификациями",
+  "Отделка и узлы раскладок, устойчивые к нагрузкам и нормам",
+  "Навигация и вывески: размещение, подсветка, крепления и ведомости",
+  "Сметы и спецификации оборудования/материалов для подрядчиков и согласований",
+];
+
 export default function DesignCommercePage() {
   return (
     <div className="bg-[var(--bg)] text-[var(--text)]">
@@ -42,18 +52,21 @@ export default function DesignCommercePage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Дизайн-проект окупается на этапе стройки
+                  Дизайн-проект в 100% случаев окупается на этапе стройки
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 2.png"
+                      src="/Image/image copy 33.png"
                       alt="Дизайн коммерческой недвижимости"
                       fill
-                      className="object-cover"
+                      className="object-cover opacity-70"
                       sizes="100vw"
                       priority
                     />
+                    <div className="absolute inset-0 bg-black/70" />
+                    <DesignIblEffect textureSrc="/Image/image copy 33.png" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -80,14 +93,57 @@ export default function DesignCommercePage() {
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 2.png"
+                  src="/Image/image copy 33.png"
                   alt="Дизайн коммерческой недвижимости"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-70"
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
+                <div className="absolute inset-0 bg-black/70" />
+                <DesignIblEffect textureSrc="/Image/image copy 33.png" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-12">
+        <div className="mx-auto max-w-6xl space-y-4 px-4 md:px-6">
+          <h3 className="text-xl font-semibold text-white md:text-2xl">Для кого и чем помогаем</h3>
+          <div className="grid gap-3 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-white/80">
+              <div className="mb-2 text-white">Рестораны</div>
+              <ul className="space-y-1 text-sm leading-relaxed">
+                <li>- Кухонное оборудование, вытяжка, холод/тепло — согласовано с инженерией</li>
+                <li>- Линии электропитания под технологию и санитарные нормы</li>
+                <li>- Потоки гостей/персонала и посадочные места без конфликтов</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-white/80">
+              <div className="mb-2 text-white">Кофейни</div>
+              <ul className="space-y-1 text-sm leading-relaxed">
+                <li>- Барная линия, вода/электрика под кофейное оборудование</li>
+                <li>- Очереди, выдача и кассы — сценарии без узких мест</li>
+                <li>- Нормы по вентиляции, запахам и шуму для быстрой сдачи</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-white/80">
+              <div className="mb-2 text-white">Производство</div>
+              <ul className="space-y-1 text-sm leading-relaxed">
+                <li>- Технологические зоны, логистика сырья/готовой продукции</li>
+                <li>- Электрика, вентиляция и санитарные узлы под нормы и контроль</li>
+                <li>- План эвакуации и охрана труда — без штрафов и переделок</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-white/80">
+              <div className="mb-2 text-white">Гостиницы</div>
+              <ul className="space-y-1 text-sm leading-relaxed">
+                <li>- Номера, ресепшен, хоззоны: инженерия и отделка согласованы</li>
+                <li>- Лифты, эвакуация и безопасность под требования МЧС</li>
+                <li>- Инженерные расчёты по водоснабжению, вентиляции и электрике</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -142,7 +198,11 @@ export default function DesignCommercePage() {
         </div>
       </section>
 
-      <DesignProjectScope />
+      <DesignProjectScope
+        title="Из чего состоит дизайн-проект коммерции"
+        description="Готовим рабочую документацию под ваш бизнес: зонирование, инженерия, узлы и спецификации, чтобы запуститься без простоев и штрафов."
+        items={projectScopeItems}
+      />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">

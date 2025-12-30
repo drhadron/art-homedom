@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -49,10 +50,16 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[var(--bg)]/90 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20">
-        <Link href="/" className="flex flex-col leading-none">
-          <span className="text-xl font-semibold tracking-tight text-white lg:text-2xl">
-            Art HomeDom
-          </span>
+        <Link href="/" className="flex items-center gap-3 leading-none pl-2 lg:gap-4 lg:pl-20">
+          <div className="relative h-8 w-36 lg:h-10 lg:w-44">
+            <Image
+              src="/Image/Dom Home лого в одну строку бело-оранжевый 2.png"
+              alt="Art HomeDom"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         <nav

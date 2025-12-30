@@ -6,24 +6,28 @@ const designCards = [
     title: "Дизайн проект квартиры",
     desc: "Планировки, визуализации, ведомости отделки и подбор материалов под реализацию.",
     image: "/Image/image copy 18.png",
+    href: "/services/design/kvartiry",
     price: "От 3 500 за м²",
   },
   {
     title: "Дизайн проект дома",
     desc: "Интерьеры с учётом инженерии и бюджета, чтобы стройка шла без переделок.",
     image: "/Image/image copy 11.png",
+    href: "/services/design/doma",
     price: "От 3 500 за м²",
   },
   {
     title: "Дизайн коммерческой недвижимости",
     desc: "Концепции для торговых площадей, офисов, ресторанов и сервисных зон.",
     image: "/Image/image copy 2.png",
+    href: "/services/design/commerce",
     price: "От 3 500 за м²",
   },
   {
     title: "Дизайн экстерьера",
     desc: "Фасады, входные группы и навигация, которые работают на бренд и эксплуатацию.",
     image: "/Image/image copy 16.png",
+    href: "/services/design/exteriyer",
     price: "От 3 500 за м²",
   },
 ];
@@ -33,16 +37,19 @@ const architectureCards = [
     title: "Архитектурный проект дома",
     desc: "Планировки, фасады, конструктив, инженерные узлы и сметы.",
     image: "/Image/image copy 15.png",
+    href: "/services/architecture/doma",
   },
   {
     title: "Архитектура торговых площадей",
     desc: "Зонирование потоков, нормы, безопасность и логистика для коммерции.",
     image: "/Image/image copy 16.png",
+    href: "/services/architecture/commerce",
   },
   {
     title: "Фасады и входные группы",
     desc: "Согласованные решения с конструктивом и инженерией, без конфликтов на стройке.",
     image: "/Image/image copy 14.png",
+    href: "/services/architecture/fasad",
   },
 ];
 
@@ -52,24 +59,28 @@ const landscapeCards = [
     desc: "Благоустройство, дорожки, дренаж, свет и озеленение под архитектуру дома.",
     image: "/Image/image copy 19.png",
     price: "От 1 500 за м²",
+    href: "/services/landscape/doma",
   },
   {
     title: "Двор многоквартирного дома",
     desc: "Навигация, освещение, безопасность и сценарии использования территории.",
     image: "/Image/image copy 4.png",
     price: "От 1 500 за м²",
+    href: "/services/landscape/mnogokvartir",
   },
   {
     title: "Коммерческие объекты",
     desc: "Входные группы, паркинги, логистика потоков и зоны ожидания.",
     image: "/Image/image copy 2.png",
     price: "От 1 500 за м²",
+    href: "/services/landscape/commerce",
   },
   {
     title: "Парки и водоёмы",
     desc: "Сценарии отдыха, озеленение, водные элементы и подсветка.",
     image: "/Image/image copy 5.png",
     price: "От 1 500 за м²",
+    href: "/services/landscape/park",
   },
 ];
 
@@ -78,21 +89,25 @@ const drawingCards = [
     title: "Чертежи коммерческих зданий",
     desc: "Рабочая документация по инженерии, узлам и спецификациям для подрядчиков.",
     image: "/Image/image copy 13.png",
+    href: "/services/plan/commerce",
   },
   {
     title: "Планировки квартир",
     desc: "Электрика, сантехника, раскладки — без лишних вопросов на стройке.",
     image: "/Image/image copy 18.png",
+    href: "/services/plan/kvartiry",
   },
   {
     title: "Планировки частных домов",
     desc: "Согласованные листы по инженерии, отделке и фасадам для стройки без рисков.",
     image: "/Image/image copy 11.png",
+    href: "/services/plan/doma",
   },
   {
     title: "Чертежи территорий",
     desc: "Дренаж, освещение, покрытие и малые формы — всё в рабочем проекте.",
     image: "/Image/image copy 19.png",
+    href: "/services/plan/territorii",
   },
 ];
 
@@ -148,7 +163,7 @@ export default function ServicesPage() {
                   Обсудить проект
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="/cases"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white transition duration-200 hover:border-white/60 hover:bg-white/5"
                 >
                   Смотреть кейсы
@@ -210,7 +225,7 @@ export default function ServicesPage() {
                     <p className="text-sm leading-relaxed text-white/70">{card.desc}</p>
                   </div>
                   <Link
-                    href="/contacts"
+                    href={card.href || "/contacts"}
                     className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--green)] transition hover:underline"
                   >
                     Подробнее

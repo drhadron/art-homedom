@@ -86,6 +86,30 @@ export default function LandscapeServicesPage() {
         </div>
       </section>
 
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-14">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <h3 className="text-xl font-semibold text-white md:text-2xl">Коммерческий ландшафт — ключевые акценты</h3>
+          <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Входные группы, паркинг и логистика потоков гостей и персонала</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Освещение и навигация, читаемые в любую погоду и время суток</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Дренаж, уклоны и покрытие — чтобы не было луж и скользких зон</span>
+            </li>
+            <li className="flex gap-2 md:col-span-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Озеленение и малые формы, стойкие к нагрузкам и обслуживанию</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

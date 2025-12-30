@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck, Sparkles } from "lucide-react";
 
 import { DesignHomeMaskEffect } from "@/components/DesignHomeMaskEffect";
@@ -12,22 +13,36 @@ export function Hero() {
           <div className="order-1 space-y-8">
             <div className="space-y-4">
               <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                Проекты, которые строятся — без сюрпризов на стройке
+                Дизайн, архитектура, ландшафт и чертежи — под ключ
               </h1>
               <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[var(--surface)] shadow-[0_25px_80px_-45px_rgba(0,0,0,0.8)] lg:hidden">
-                <div className="relative aspect-[4/3] w-full bg-black">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/Image/image copy 2.png"
+                    alt="Визуализация"
+                    fill
+                    className="object-cover opacity-70"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-black/70" />
                   <DesignHomeMaskEffect />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                 </div>
               </div>
-              <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                Мы делаем архитектурное проектирование и архитектурный дизайн
-                так, чтобы решение проходило весь путь: от концепции до рабочей
-                документации и реализации.
+              <p className="max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
+                Проектируем интерьеры, экстерьеры, архитектуру, ландшафт и рабочую документацию, чтобы стройка шла по
+                плану, а не по догадкам подрядчиков.
               </p>
-              <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-                Если вам нужен проектирование частных домов, где всё рассчитано
-                заранее — сроки, узлы, инженерия и бюджет — вы по адресу.
-              </p>
+              <div className="space-y-2 text-sm text-white/75 md:text-base">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--green)]" aria-hidden />
+                  Считаем риски заранее: сроки, сметы, инженерия и логистика.
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--orange)]" aria-hidden />
+                  Чертежи, по которым подрядчики не задают лишних вопросов.
+                </div>
+              </div>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--orange)] px-6 py-3 text-base font-semibold text-[var(--bg)] shadow-[0_10px_40px_rgba(255,106,0,0.25)] transition duration-200 hover:translate-y-[-1px] hover:shadow-[0_14px_50px_rgba(255,106,0,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--orange)]">
@@ -56,8 +71,17 @@ export function Hero() {
             </div>
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[var(--surface)] shadow-[0_25px_80px_-45px_rgba(0,0,0,0.8)]">
               <div className="pointer-events-none absolute -right-10 top-1/4 h-48 w-48 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,106,0,0.22),transparent_60%)] blur-3xl" />
-              <div className="relative aspect-[4/3] w-full bg-black">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="/Image/image copy 2.png"
+                  alt="Визуализация"
+                  fill
+                  className="object-cover opacity-70"
+                  priority
+                />
+                <div className="absolute inset-0 bg-black/70" />
                 <DesignHomeMaskEffect />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>

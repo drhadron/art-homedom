@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 
+import Image from "next/image";
+import { DesignIblEffect } from "@/components/DesignIblEffect";
 import { DesignProjectScope } from "@/components/DesignProjectScope";
 
 const included = [
@@ -27,6 +28,15 @@ const caseImages = [
   { src: "/Image/image copy 10.png", alt: "Кейс SPA 4" },
 ];
 
+const projectScopeItems = [
+  "Зонирование SPA/бассейна: мокрые зоны, техпомещения, потоки гостей и персонала",
+  "Гидроизоляция и узлы сопряжений, исключающие протечки и конденсат",
+  "ОВиК и осушение: расчёты и схемы вентиляции/климата для влажных зон",
+  "Водоподготовка и технологические узлы подключения оборудования",
+  "Отделка мокрых зон, антискользящие покрытия и устойчивые материалы",
+  "Спецификации оборудования, света и мебели + 3D визуализации для согласования",
+];
+
 export default function DesignSpaPage() {
   return (
     <div className="bg-[var(--bg)] text-[var(--text)]">
@@ -42,18 +52,21 @@ export default function DesignSpaPage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Дизайн SPA, который окупается на стройке
+                  Дизайн SPA, без которого не может начинаться стройка
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 14.png"
+                      src="/Image/image copy 34.png"
                       alt="Дизайн SPA"
                       fill
-                      className="object-cover"
+                      className="object-cover opacity-70"
                       sizes="100vw"
                       priority
                     />
+                    <div className="absolute inset-0 bg-black/70" />
+                    <DesignIblEffect textureSrc="/Image/image copy 34.png" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -80,13 +93,16 @@ export default function DesignSpaPage() {
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 14.png"
+                  src="/Image/image copy 34.png"
                   alt="Дизайн SPA"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-70"
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
+                <div className="absolute inset-0 bg-black/70" />
+                <DesignIblEffect textureSrc="/Image/image copy 34.png" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>
@@ -117,7 +133,11 @@ export default function DesignSpaPage() {
         </div>
       </section>
 
-      <DesignProjectScope />
+      <DesignProjectScope
+        title="Из чего состоит дизайн-проект SPA"
+        description="Даем полный комплект под влажные зоны: инженерия, гидроизоляция, материалы и узлы, чтобы эксплуатация была безопасной и без протечек."
+        items={projectScopeItems}
+      />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">

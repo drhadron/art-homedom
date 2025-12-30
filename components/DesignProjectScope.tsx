@@ -20,25 +20,31 @@ export const designProjectScope = [
 
 type DesignProjectScopeProps = {
   className?: string;
+  title?: string;
+  description?: string;
+  items?: string[];
 };
 
-export function DesignProjectScope({ className }: DesignProjectScopeProps) {
+export function DesignProjectScope({ className, title, description, items }: DesignProjectScopeProps) {
   const sectionClassName = ["w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16", className]
     .filter(Boolean)
     .join(" ");
+
+  const list = items && items.length > 0 ? items : designProjectScope;
+  const heading = title || "Из чего состоит дизайн-проект";
+  const desc =
+    description ||
+    "Собираем полный объём по всем помещениям, чтобы подрядчики работали без вопросов, а визуализации совпали с результатом.";
 
   return (
     <section className={sectionClassName}>
       <div className="mx-auto max-w-6xl space-y-5 px-4 md:px-6">
         <div className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white md:text-3xl">Из чего состоит дизайн-проект</h2>
-          <p className="text-base leading-relaxed text-white/75 md:text-lg">
-            Собираем полный объём по всем помещениям, чтобы подрядчики работали без вопросов, а визуализации
-            совпали с результатом.
-          </p>
+          <h2 className="text-2xl font-semibold text-white md:text-3xl">{heading}</h2>
+          <p className="text-base leading-relaxed text-white/75 md:text-lg">{desc}</p>
         </div>
         <ol className="grid gap-3 md:gap-4 md:grid-cols-2">
-          {designProjectScope.map((item, index) => (
+          {list.map((item, index) => (
             <li
               key={item}
               className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base"

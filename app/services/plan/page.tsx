@@ -88,6 +88,30 @@ export default function PlanServicesPage() {
         </div>
       </section>
 
+      <section className="w-full overflow-hidden bg-[var(--bg)] pb-10 md:pb-14">
+        <div className="mx-auto max-w-6xl space-y-3 px-4 md:px-6">
+          <h3 className="text-xl font-semibold text-white md:text-2xl">Коммерческие чертежи — что критично</h3>
+          <ul className="grid gap-2 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base md:grid-cols-2 md:gap-3">
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Технология: размещение оборудования, точки электрики/воды под конкретный бренд</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Инженерия: вентиляция, кондиционирование, силовые линии — в чертежах и спецификациях</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Нормы: эвакуация, пожарка, санитарные требования — учтены до закупок</span>
+            </li>
+            <li className="flex gap-2 md:col-span-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
+              <span>Сметы и ведомости: подрядчикам понятны объёмы, материалы и узлы — без переделок и штрафов</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="w-full overflow-hidden bg-[var(--bg)] pb-12 md:pb-20">
         <div className="mx-auto max-w-6xl px-4 md:px-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

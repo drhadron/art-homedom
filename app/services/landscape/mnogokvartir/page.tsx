@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesignIblEffect } from "@/components/DesignIblEffect";
+
 const includes = [
   "Зонирование двора, сценарии использования и навигация",
   "Освещение, покрытие, дренаж и озеленение",
@@ -49,13 +51,16 @@ export default function LandscapeMnogokvartirPage() {
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 4.png"
+                      src="/Image/image copy 36.png"
                       alt="Ландшафт многоквартирного дома"
                       fill
-                      className="object-cover"
+                      className="object-cover opacity-70"
                       sizes="100vw"
                       priority
                     />
+                    <div className="absolute inset-0 bg-black/40" />
+                    <DesignIblEffect textureSrc="/Image/image copy 36.png" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -82,13 +87,16 @@ export default function LandscapeMnogokvartirPage() {
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 4.png"
+                  src="/Image/image copy 36.png"
                   alt="Ландшафт многоквартирного дома"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-70"
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
+                <div className="absolute inset-0 bg-black/40" />
+                <DesignIblEffect textureSrc="/Image/image copy 36.png" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>

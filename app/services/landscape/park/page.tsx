@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DesignIblEffect } from "@/components/DesignIblEffect";
 
 const includes = [
   "Сценарии отдыха и маршруты, навигация и зонирование",
@@ -49,13 +50,15 @@ export default function LandscapeParkPage() {
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 5.png"
+                      src="/Image/image copy 37.png"
                       alt="Парки и водоёмы"
                       fill
                       className="object-cover"
                       sizes="100vw"
                       priority
                     />
+                    <div className="absolute inset-0 bg-black/40" />
+                    <DesignIblEffect textureSrc={null} lightPreset="bright" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -82,13 +85,15 @@ export default function LandscapeParkPage() {
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 5.png"
+                  src="/Image/image copy 37.png"
                   alt="Парки и водоёмы"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
+                <div className="absolute inset-0 bg-black/40" />
+                <DesignIblEffect textureSrc={null} lightPreset="bright" />
               </div>
             </div>
           </div>

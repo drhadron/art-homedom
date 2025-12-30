@@ -17,33 +17,34 @@ const cases = [
 
 const services = [
   {
-    title: "Дизайн проект",
-    href: "/services/design/doma",
-    image: "/Image/image copy 11.png",
-    tagline: "Дизайн проект дома в 100% случаев окупает себя на этапе стройки.",
-    price: "От 3 500 за м²",
+    title: "Дизайн проект интерьера",
+    href: "/services/design",
+    image: "/Image/image copy 18.png",
+    tagline: "Планировки, визуализации, ведомости и узлы — ремонт без переделок.",
   },
   {
-    title: "Ландшафт",
-    href: "/services/landscape",
-    image: "/Image/image copy 19.png",
-    tagline: "Ландшафт — страхование от переделок: дорожки, свет и дренаж сразу в проекте.",
-    price: "От 1 500 за м²",
-  },
-  {
-    title: "Чертежи и планировки",
-    href: "/services/plan",
-    image: "/Image/image copy 13.png",
-    tagline: "Чертежи — страхование от финансовых потерь.",
-    price: "От 800 за м²",
+    title: "Дизайн проект экстерьера",
+    href: "/services/design/exteriyer",
+    image: "/Image/image copy 16.png",
+    tagline: "Фасады, входные группы и навигация с узлами и спецификациями под стройку.",
   },
   {
     title: "Архитектурный проект",
     href: "/services/architecture",
     image: "/Image/image copy 15.png",
-    tagline:
-      "Архитектурный проект — самый важный этап, который либо радует, либо нет, взгляд на протяжении всей жизни.",
-    price: "От 1 500 за м²",
+    tagline: "Концепция, фасады, конструктив и инженерия — без конфликтов на стройке.",
+  },
+  {
+    title: "Чертежи",
+    href: "/services/plan",
+    image: "/Image/image copy 13.png",
+    tagline: "Рабочие листы с узлами и спецификациями, чтобы подрядчики не задавали лишних вопросов.",
+  },
+  {
+    title: "Ландшафтный проект",
+    href: "/services/landscape",
+    image: "/Image/image copy 19.png",
+    tagline: "Дорожки, дренаж, свет и озеленение в одном проекте без переделок после стройки.",
   },
 ];
 
@@ -59,10 +60,10 @@ export function ServicesSection() {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--orange)]" aria-hidden />
-              Услуги и контроль
+              Услуги
             </div>
             <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              Мы берем проект под ключ и доводим до стройки
+              Мы берем проекты под ключ и доводим до реализации
             </h2>
             <div className="grid gap-3 text-white/80 sm:grid-cols-2">
               {services.map((service) => (
@@ -80,11 +81,6 @@ export function ServicesSection() {
                       sizes="(min-width: 1024px) 320px, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10" />
-                    {service.price ? (
-                      <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-[color:rgba(34,197,94,0.65)] px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                        {service.price}
-                      </div>
-                    ) : null}
                   </div>
                   <div className="flex flex-1 flex-col justify-between px-4 py-4">
                     <div className="space-y-2">
