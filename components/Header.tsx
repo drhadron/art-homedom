@@ -135,7 +135,7 @@ export function Header() {
               </svg>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/home___dom/"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-white/10 bg-white/5 p-2 text-white transition hover:border-white/30 hover:bg-white/10"
@@ -194,7 +194,7 @@ export function Header() {
             </svg>
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/home___dom/"
             target="_blank"
             rel="noreferrer"
             className="rounded-full border border-white/10 bg-white/5 p-2 text-white transition hover:border-white/30 hover:bg-white/10"
@@ -320,7 +320,7 @@ export function Header() {
                       </svg>
                     </a>
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/home___dom/"
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-full border border-white/10 bg-white/5 p-2 text-white transition hover:border-white/30 hover:bg-white/10"

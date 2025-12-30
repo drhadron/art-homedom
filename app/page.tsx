@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <div className="relative">
       <Hero />
-      <ServicesSection />
       <StudioSection />
+      <ServicesSection />
     </div>
   );
 }

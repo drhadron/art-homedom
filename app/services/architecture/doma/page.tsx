@@ -36,7 +36,7 @@ export default function ArchitectureDomaPage() {
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
                     <Image
-                      src="/Image/image copy 16.png"
+                      src="/Image/image copy 25.png"
                       alt="Архитектурный проект дома"
                       fill
                       className="object-cover"
@@ -48,6 +48,11 @@ export default function ArchitectureDomaPage() {
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
                   Планировки, фасады, конструктив, инженерия и сметы в едином проекте — чтобы дом строился
                   по чертежам, без переделок и лишних затрат.
+                </p>
+                <p className="text-sm leading-relaxed text-white/70 md:text-base">
+                  Разрабатываем концепцию и полный комплект: посадка дома на участок, планировки, фасады, кровля и
+                  конструктив с узлами и ведомостями. Учитываем нормы, рельеф, подъезды и инженерные сети, чтобы
+                  стройка шла по понятной документации, а согласования проходили без задержек.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -69,7 +74,7 @@ export default function ArchitectureDomaPage() {
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src="/Image/image copy 16.png"
+                  src="/Image/image copy 25.png"
                   alt="Архитектурный проект дома"
                   fill
                   className="object-cover"

@@ -23,9 +23,10 @@ type DesignProjectScopeProps = {
   title?: string;
   description?: string;
   items?: string[];
+  blocks?: { title: string; description?: string; items: string[] }[];
 };
 
-export function DesignProjectScope({ className, title, description, items }: DesignProjectScopeProps) {
+export function DesignProjectScope({ className, title, description, items, blocks }: DesignProjectScopeProps) {
   const sectionClassName = ["w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16", className]
     .filter(Boolean)
     .join(" ");
@@ -43,19 +44,50 @@ export function DesignProjectScope({ className, title, description, items }: Des
           <h2 className="text-2xl font-semibold text-white md:text-3xl">{heading}</h2>
           <p className="text-base leading-relaxed text-white/75 md:text-lg">{desc}</p>
         </div>
-        <ol className="grid gap-3 md:gap-4 md:grid-cols-2">
-          {list.map((item, index) => (
-            <li
-              key={item}
-              className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base"
-            >
-              <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--green)] text-sm font-semibold text-[var(--bg)]">
-                {index + 1}
-              </span>
-              <span className="leading-relaxed">{item}</span>
-            </li>
-          ))}
-        </ol>
+        {blocks && blocks.length > 0 ? (
+          <div className="grid gap-3 md:gap-4 md:grid-cols-2">
+            {blocks.map((block, index) => (
+              <div
+                key={block.title}
+                className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-white"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--green)] text-base font-semibold text-[var(--bg)]">
+                    {index + 1}
+                  </span>
+                  <div className="space-y-1">
+                    <div className="text-lg font-semibold leading-tight">{block.title}</div>
+                    {block.description ? (
+                      <p className="text-sm leading-relaxed text-white/75">{block.description}</p>
+                    ) : null}
+                  </div>
+                </div>
+                <ul className="space-y-1.5 text-sm text-white/80 md:text-base">
+                  {block.items.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[var(--orange)]" aria-hidden />
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ol className="grid gap-3 md:gap-4 md:grid-cols-2">
+            {list.map((item, index) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-[var(--surface)] p-4 text-sm text-white/80 md:text-base"
+              >
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--green)] text-sm font-semibold text-[var(--bg)]">
+                  {index + 1}
+                </span>
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
     </section>
   );

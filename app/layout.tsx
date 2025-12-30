@@ -17,10 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Архитектурное проектирование и дизайн | Art HomeDom",
+  title: {
+    default: "Архитектурное проектирование и дизайн | HomeDom",
+    template: "%s | HomeDom",
+  },
   description:
-    "Архитектурное проектирование, архитектурный дизайн и авторский надзор: проекты частных домов, рабочая документация и контроль реализации без сюрпризов на стройке.",
+    "HomeDom — архитектурное бюро полного цикла: архитектурный проект, дизайн интерьера и экстерьера, ландшафт, рабочие чертежи, авторский надзор и комплектация под ключ.",
   keywords: [
+    "HomeDom",
     "Art Homedom",
     "архитектурная компания",
     "архитектурное бюро",
@@ -111,6 +115,18 @@ export const metadata: Metadata = {
     "стоимость проектирования",
     "цена дизайн-проекта",
   ],
+  openGraph: {
+    title: "Архитектурное проектирование и дизайн | HomeDom",
+    description:
+      "HomeDom — архитектурное бюро полного цикла: архитектурный проект, дизайн интерьера и экстерьера, ландшафт, рабочие чертежи, авторский надзор и комплектация под ключ.",
+    url: "https://homedom.shop",
+    siteName: "HomeDom",
+    locale: "ru_RU",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://homedom.shop",
+  },
 };
 
 export default function RootLayout({

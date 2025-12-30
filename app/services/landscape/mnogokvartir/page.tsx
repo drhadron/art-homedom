@@ -46,7 +46,7 @@ export default function LandscapeMnogokvartirPage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Двор, который работает на комфорт жильцов
+                  Ландшафт создает атмосферу, которая проявится в каждый ваш день
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">

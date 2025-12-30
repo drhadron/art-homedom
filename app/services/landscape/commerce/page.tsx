@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { WavesParticlesEffect } from "@/components/WavesParticlesEffect";
 
 const includes = [
   "Зонирование потоков, навигация, парковки и входные группы",
@@ -44,18 +45,11 @@ export default function LandscapeCommercePage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Ландшафт для коммерции окупается на этапе стройки
+                  Ландшафт создает атмосферу, которая влияет на конверсию
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 2.png"
-                      alt="Ландшафт коммерческих объектов"
-                      fill
-                      className="object-cover"
-                      sizes="100vw"
-                      priority
-                    />
+                  <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-[#000104] via-[#060a15] to-[#000104]">
+                    <WavesParticlesEffect />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -80,15 +74,8 @@ export default function LandscapeCommercePage() {
             </div>
 
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 2.png"
-                  alt="Ландшафт коммерческих объектов"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  priority
-                />
+              <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-[#000104] via-[#060a15] to-[#000104]">
+                <WavesParticlesEffect />
               </div>
             </div>
           </div>

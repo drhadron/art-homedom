@@ -4,14 +4,39 @@ import Image from "next/image";
 import { DesignIblEffect } from "@/components/DesignIblEffect";
 import { DesignProjectScope } from "@/components/DesignProjectScope";
 
-const included = [
-  "Зонирование SPA: бассейн, хаммам, сауна, душевые, раздевалки и техзоны",
-  "Визуализации и ведомости отделки, мебели, света и профильного оборудования",
-  "Инженерные узлы: вентиляция, отопление, водоподготовка, гидроизоляция и шумка",
-  "Чертежи: технический план и 3D-модель в Revit, инженерные схемы и узлы для подрядчиков",
-  "Спецификация всех материалов, светотехники, мебели и оборудования по проекту",
-  "3D Max визуализации всех зон SPA/бассейна для согласования",
-  "Подбор материалов и оборудования, снабжение и авторский надзор",
+const stages = [
+  {
+    title: "Чертежи (технический план)",
+    items: [
+      "Зонирование SPA: бассейн, хаммам, сауна, душевые, раздевалки и техзоны",
+      "Планы вентиляции, отопления, осушения, электрики и водоподготовки",
+      "Узлы гидроизоляции, шумки и стыков покрытий для подрядчиков",
+    ],
+  },
+  {
+    title: "Спецификация всех материалов",
+    items: [
+      "Ведомости отделки, светотехники, мебели и профильного оборудования",
+      "Антискользящие и влагостойкие материалы под нормы безопасности",
+      "Сметы, подбор и снабжение, чтобы избежать задержек и замен",
+    ],
+  },
+  {
+    title: "3D чертежи через Revit",
+    items: [
+      "3D-модель SPA/бассейна с инженерией и высотами для коллизий",
+      "Привязки мокрых зон, трапов, потолков, подсветки и технологических узлов",
+      "Экспорт для подрядчиков и согласований с эксплуатацией",
+    ],
+  },
+  {
+    title: "3D Max визуализация",
+    items: [
+      "Визуализации всех зон (чаша, хаммам, сауны, релакс) под утверждённые материалы",
+      "Синхронизация визуализаций со спецификациями и инженерными решениями",
+      "Используем визуалки для согласований и авторского надзора",
+    ],
+  },
 ];
 
 const risks = [
@@ -26,15 +51,6 @@ const caseImages = [
   { src: "/Image/image copy 22.png", alt: "Кейс SPA 2" },
   { src: "/Image/image copy 17.png", alt: "Кейс SPA 3" },
   { src: "/Image/image copy 10.png", alt: "Кейс SPA 4" },
-];
-
-const projectScopeItems = [
-  "Зонирование SPA/бассейна: мокрые зоны, техпомещения, потоки гостей и персонала",
-  "Гидроизоляция и узлы сопряжений, исключающие протечки и конденсат",
-  "ОВиК и осушение: расчёты и схемы вентиляции/климата для влажных зон",
-  "Водоподготовка и технологические узлы подключения оборудования",
-  "Отделка мокрых зон, антискользящие покрытия и устойчивые материалы",
-  "Спецификации оборудования, света и мебели + 3D визуализации для согласования",
 ];
 
 export default function DesignSpaPage() {
@@ -134,24 +150,13 @@ export default function DesignSpaPage() {
       </section>
 
       <DesignProjectScope
-        title="Из чего состоит дизайн-проект SPA"
-        description="Даем полный комплект под влажные зоны: инженерия, гидроизоляция, материалы и узлы, чтобы эксплуатация была безопасной и без протечек."
-        items={projectScopeItems}
+        title="Дизайн-проект SPA — этапы и состав"
+        description="Готовим комплект для влажных зон: инженерия, гидроизоляция, материалы и визуализации, чтобы запуск SPA прошёл без протечек и штрафов."
+        blocks={stages}
       />
 
       <section className="w-full overflow-hidden bg-[var(--bg)] py-10 md:py-16">
         <div className="mx-auto max-w-6xl px-4 md:px-6 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold text-white md:text-3xl">Что входит</h2>
-            <ul className="space-y-2 text-white/80">
-              {included.map((item) => (
-                <li key={item} className="flex gap-3 text-sm md:text-base">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-[var(--orange)]" aria-hidden />
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
           <div className="space-y-3">
             <h2 className="text-2xl font-semibold text-white md:text-3xl">Какие проблемы решаем</h2>
             <ul className="space-y-2 text-white/80">
@@ -162,6 +167,13 @@ export default function DesignSpaPage() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="space-y-4 rounded-2xl border border-white/10 bg-[var(--surface)] p-5">
+            <h3 className="text-xl font-semibold text-white md:text-2xl">Что даёт проект</h3>
+            <p className="text-sm leading-relaxed text-white/75 md:text-base">
+              Ведомости, узлы и визуализации под влажные зоны: подрядчики понимают гидроизоляцию, вентиляцию и
+              водоподготовку, запуск проходит без переделок, а эксплуатация — без аварий.
+            </p>
           </div>
         </div>
       </section>

@@ -42,7 +42,7 @@ export default function ArchitectureFasadPage() {
               </div>
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl md:leading-[1.05]">
-                  Фасад окупается на этапе стройки
+                  Фасад — это главная часть проекта
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
