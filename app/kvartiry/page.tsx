@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DesignIblEffect } from "@/components/DesignIblEffect";
 
 const serviceCards = [
   {
@@ -53,7 +52,6 @@ export default function KvartiryPage() {
                       priority
                     />
                     <div className="absolute inset-0 bg-black/70" />
-                    <DesignIblEffect textureSrc="/Image/image copy 30.png" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
@@ -99,7 +97,6 @@ export default function KvartiryPage() {
                   priority
                 />
                 <div className="absolute inset-0 bg-black/70" />
-                <DesignIblEffect textureSrc="/Image/image copy 30.png" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>

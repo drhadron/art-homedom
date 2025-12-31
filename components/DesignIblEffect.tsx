@@ -7,7 +7,7 @@ type DesignIblEffectProps = {
   lightPreset?: "default" | "bright";
 };
 
-export function DesignIblEffect({ textureSrc, lightPreset = "default" }: DesignIblEffectProps) {
+export function DesignIblEffect({ textureSrc, lightPreset = "bright" }: DesignIblEffectProps) {
   const mountRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

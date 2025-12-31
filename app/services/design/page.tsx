@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { DesignIblEffect } from "@/components/DesignIblEffect";
 import { DesignProjectScope } from "@/components/DesignProjectScope";
 
 const designStages = [
@@ -93,16 +92,14 @@ export default function DesignServicesPage() {
                 </h1>
                 <div className="relative overflow-hidden rounded-3xl bg-[var(--surface)] lg:hidden">
                   <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src="/Image/image copy 25.png"
-                      alt="Дизайн-проект"
-                      fill
-                      className="object-cover opacity-70"
-                      priority
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      src="/Image/542ae4ec8202f4ea5b0b8248369d5982_720w-1.mp4"
                     />
-                    <div className="absolute inset-0 bg-black/70" />
-                    <DesignIblEffect textureSrc="/Image/image copy 25.png" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -127,16 +124,14 @@ export default function DesignServicesPage() {
             </div>
             <div className="order-2 hidden overflow-hidden rounded-3xl bg-[var(--surface)] lg:block">
               <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/Image/image copy 25.png"
-                  alt="Дизайн-проект"
-                  fill
-                  className="object-cover opacity-70"
-                  priority
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  src="/Image/542ae4ec8202f4ea5b0b8248369d5982_720w-1.mp4"
                 />
-                <div className="absolute inset-0 bg-black/70" />
-                <DesignIblEffect textureSrc="/Image/image copy 25.png" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>

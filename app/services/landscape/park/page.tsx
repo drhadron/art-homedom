@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { DesignIblEffect } from "@/components/DesignIblEffect";
 
 const includes = [
   "Сценарии отдыха и маршруты, навигация и зонирование",
@@ -57,8 +56,6 @@ export default function LandscapeParkPage() {
                       sizes="100vw"
                       priority
                     />
-                    <div className="absolute inset-0 bg-black/40" />
-                    <DesignIblEffect textureSrc={null} lightPreset="bright" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -92,8 +89,6 @@ export default function LandscapeParkPage() {
                   sizes="(min-width: 1024px) 520px, 100vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-black/40" />
-                <DesignIblEffect textureSrc={null} lightPreset="bright" />
               </div>
             </div>
           </div>

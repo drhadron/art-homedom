@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { DesignIblEffect } from "@/components/DesignIblEffect";
 import { DesignProjectScope } from "@/components/DesignProjectScope";
 
 const stages = [
@@ -76,12 +75,9 @@ export default function DesignKvartiryPage() {
                       src="/Image/image copy 30.png"
                       alt="Дизайн-проект квартиры фон"
                       fill
-                      className="object-cover opacity-70"
+                      className="object-cover"
                       priority
                     />
-                    <div className="absolute inset-0 bg-black/70" />
-                    <DesignIblEffect textureSrc="/Image/image copy 30.png" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
                   </div>
                 </div>
                 <p className="text-base leading-relaxed text-white/75 md:text-lg">
@@ -111,12 +107,9 @@ export default function DesignKvartiryPage() {
                   src="/Image/image copy 30.png"
                   alt="Дизайн-проект квартиры фон"
                   fill
-                  className="object-cover opacity-70"
+                  className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-black/70" />
-                <DesignIblEffect textureSrc="/Image/image copy 30.png" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
               </div>
             </div>
           </div>
